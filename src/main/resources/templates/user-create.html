@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${user}">
+	<h1>User create:</h1>
+	<form method="POST">
+		<label>Username</label>
+		<input type="text" name="username" th:value="*{username}" >
+		<br>
+		<label>Password</label>
+		<input type="password" name="password" th:value="*{password}" >
+		<br>
+		<label>Date of Birth</label>
+		<input type="date" name="dateOfBirth" th:value="*{dateOfBirth}" >
+		<br>
+		<input type="submit" value="CREATE" >
+	</form>
+</body>
+</html>

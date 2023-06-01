@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${post}">
+	<h1>Post create:</h1>
+	<form method="POST">
+		<label>Title</label>
+		<input type="text" name="title" th:value="*{title}" >
+		<br>
+		<label>Text</label>
+		<input type="text" name="text" th:value="*{text}" >
+		<br>
+		<select name="user">
+			<option
+				th:each="user : ${users}"
+				th:object="${user}"
+				th:value="*{id}"
+			>
+				[[ *{username} ]]
+			</option>
+		</select>
+		<br>
+		<input type="submit" value="CREATE" >
+	</form>
+</body>
+</html>

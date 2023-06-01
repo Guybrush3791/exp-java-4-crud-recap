@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Posts:</h1>
+	<a href="/posts/create">CREATE NEW POST</a>
+	<ul>
+		<li
+			th:each="post : ${posts}"
+			th:object="${post}"
+		>
+			[[ *{title} ]] - [[ *{user.username} ]]
+			<br>
+			[[ *{text} ]]
+			<br>
+			[[ *{date} ]]
+		</li>
+	</ul>
+</body>
+</html>
